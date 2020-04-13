@@ -30,10 +30,11 @@ def gameLoop():
 
         if(writeOnTable(coordX,coordY,turn)== True):
             writeOnTable(coordX,coordY,turn)
-            turn += 1   
+            turn +=1     
         else:
             print("\nthis position is already picked\n")
-            gameLoop()
+            continue
+        
         if(winCheck() == "xT"):
             print("\n\nX WON :\n")
             a= 0
@@ -54,7 +55,8 @@ def writeOnTable(x,y,turn):
         if(theTable[x-1][y-1]=="_"):
             theTable[x-1][y-1] = "O"
             return True
-    return False
+    else:
+        return False
 
 def winCheck():
     for t in range(0,3):
