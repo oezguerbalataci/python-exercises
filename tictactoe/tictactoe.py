@@ -26,7 +26,7 @@ def gameLoop():
         coordY = int(input("give the y coord (between 1-3): "))
         if(coordX not in range(1,4) or coordY not in range(1,4) or type(coordX) != int or type(coordY) != int ):
             print("\nthe coordinates must be in range of 1-3")
-            gameLoop()
+            continue
 
         if(writeOnTable(coordX,coordY,turn)== True):
             writeOnTable(coordX,coordY,turn)
